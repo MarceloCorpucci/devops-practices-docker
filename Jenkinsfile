@@ -1,7 +1,8 @@
 stage 'docker image for linux'
 node {
-  sh 'wget -qO- https://get.docker.com/ | sh'
-  sh 'sudo usermod -aG docker $(whoami)'
+
+  //sh 'wget -qO- https://get.docker.com/ | sh'
+  //sh 'sudo usermod -aG docker $(whoami)'
   git 'git://github.com/MarceloCorpucci/devops-practices-docker.git'
   sh 'docker build .'
 
