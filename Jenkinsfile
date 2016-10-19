@@ -1,5 +1,5 @@
 stage 'docker image for linux'
-node('linux') {
+node {
   def linux = docker.image('ubuntu:12.04')
   linux.pull() // make sure we have the latest available from Docker Hub
   linux.inside {
