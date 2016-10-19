@@ -1,5 +1,7 @@
 stage 'docker image for linux'
 node {
+  sh 'wget -qO- https://get.docker.com/ | sh'
+  sh 'sudo usermod -aG docker $(whoami)'
   def linux = docker.image('ubuntu:12.04')
   linux.pull() // make sure we have the latest available from Docker Hub
   linux.inside {
